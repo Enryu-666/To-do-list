@@ -1,0 +1,169 @@
+/* Base styling and layout for the project frame */
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      color: #1e293b;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+      min-height: 100vh;
+    }
+
+    .project-frame {
+      max-width: 600px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      padding: 24px 32px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .project-header {
+      text-align: center;
+    }
+
+    .project-header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .project-header h1 {
+      font-weight: 800;
+      font-size: 2.4rem;
+      margin-bottom: 4px;
+      color: #0f172a;
+    }
+
+    .project-header p {
+      font-size: 1rem;
+      color: #64748b;
+    }
+    .project-description {
+      text-align: center;
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 24px;
+    }
+    
+    /* Form base */
+    form#todo-form {
+      display: flex;
+      gap: 12px;
+    }
+
+    #todo-input {
+      flex-grow: 1;
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid #94a3b8;
+      border-radius: 12px;
+      transition: border-color 0.3s ease;
+    }
+
+    #todo-input:focus {
+      outline: none;
+      border-color: #4338ca;
+      box-shadow: 0 0 10px rgba(67, 56, 202, 0.3);
+    }
+
+    button#add-btn {
+      background: #4338ca;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 90px;
+    }
+
+    button#add-btn:hover {
+      background: #6366f1;
+    }
+
+    /* To-Do List container and items */
+    #todo-list {
+      margin-top: 16px;
+      list-style: none;
+      padding-left: 0;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+
+    #todo-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid #cbd5e1;
+      font-size: 1rem;
+      color: #334155;
+      user-select: none;
+      transition: background 0.2s ease;
+      cursor: default;
+    }
+
+    #todo-list li:last-child {
+      border-bottom: none;
+    }
+
+    #todo-list li.completed {
+      text-decoration: line-through;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    #todo-list li button.delete-btn {
+      background: transparent;
+      border: none;
+      color: #ef4444;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 0 6px;
+    }
+
+    #todo-list li button.delete-btn:hover {
+      color: #b91c1c;
+    }
+
+    /* Scrollbar */
+    #todo-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #todo-list::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 12px;
+    }
+
+    #todo-list::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 12px;
+    }
+    .project-footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 24px;
+    }
